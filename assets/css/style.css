@@ -1,0 +1,617 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+form {
+    margin: 0 0 2rem 0;
+}
+
+    form > :last-child {
+        margin-bottom: 0;
+    }
+
+    form > .fields {
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -moz-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: calc(100% + 3rem);
+        margin: -1.5rem 0 2rem -1.5rem;
+    }
+
+        form > .fields > .field {
+            -moz-flex-grow: 0;
+            -webkit-flex-grow: 0;
+            -ms-flex-grow: 0;
+            flex-grow: 0;
+            -moz-flex-shrink: 0;
+            -webkit-flex-shrink: 0;
+            -ms-flex-shrink: 0;
+            flex-shrink: 0;
+            padding: 1.5rem 0 0 1.5rem;
+            width: calc(100% - 1.5rem);
+        }
+
+            form > .fields > .field.half {
+                width: calc(50% - 0.75rem);
+            }
+
+            form > .fields > .field.third {
+                width: calc(100%/3 - 0.5rem);
+            }
+
+            form > .fields > .field.quarter {
+                width: calc(25% - 0.375rem);
+            }
+
+    @media screen and (max-width: 480px) {
+
+        form > .fields {
+            width: calc(100% + 3rem);
+            margin: -1.5rem 0 2rem -1.5rem;
+        }
+
+            form > .fields > .field {
+                padding: 1.5rem 0 0 1.5rem;
+                width: calc(100% - 1.5rem);
+            }
+
+                form > .fields > .field.half {
+                    width: calc(100% - 1.5rem);
+                }
+
+                form > .fields > .field.third {
+                    width: calc(100% - 1.5rem);
+                }
+
+                form > .fields > .field.quarter {
+                    width: calc(100% - 1.5rem);
+                }
+
+    }
+
+label {
+    color: #ffffff;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+}
+
+
+
+header{
+    position: absolute;
+    height: 20px;
+    z-index: 9999;
+    width: 100%;
+    padding: 0.9rem 0;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    width: 100%;
+    
+
+}
+
+header nav{
+    
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+header ul a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-size: 0.83rem;
+}
+
+.hamburger{
+    padding-left: 1.5rem;
+}
+.hamburger a{
+        padding: 0;
+        width: 37px;
+        height: 37px;
+        display: flex;
+        border-radius: 50%;
+        background-color:rgba(115,115,115, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        justify-content: center;
+        align-items: center;
+}
+.hamburger a:hover {
+    box-shadow: 0 0 10px rgba(250, 250, 250, 0.7);
+
+
+}
+.hamburger .bar{
+    position: relative;
+    width: 52%;
+    height: 1.3px;
+    background-color: #fff;
+    border-radius: 2px;
+
+}
+.hamburger .bar ::before, 
+.hamburger .bar ::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 2px;
+
+
+}
+.hamburger .bar ::before{
+    top: -4.5px;
+
+}
+.hamburger .bar ::after{
+    top: 4.5px;
+}
+main{
+   
+    background-size: cover; /* 調整背景圖片的大小以填滿整個容器 */
+    background-position: center;
+    position: relative;
+    
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+.bg-img{
+    /* position: absolute;
+    width: 2800px;
+    top: calc(50%  -390px);
+    left: calc(50% + 10px);
+    /* transform: translate(-50%,-50%); */
+    z-index: 1;
+     */
+
+}
+
+
+.text{
+    
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 22%;
+    top: 40%;
+    /* transform: translate(-50%,-50%); */
+    z-index: 6;
+    text-align: center;
+    text-transform: uppercase;
+
+
+}
+
+.gg{
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:radial-gradient(ellipse at center,rgba(0,0,0,0) 65% ,rgba(0,0,0,0.7));
+
+}
+.imagecontainer{
+    background-image:url("../hh/moonshit_1.jpg");
+    background-size:cover;
+    width:100%;
+    height: 100%;
+}
+
+
+.DISCOVER{
+  display: inline-block;
+  margin-bottom: -15px;
+
+}
+.DISCOVER img{
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+
+.PLANET {
+    position: relative; /* 让子元素相对于父容器定位 */
+    width: 100vw; /* 容器宽度占满屏幕 */
+    height: 100vh; /* 容器高度占满屏幕 */
+    overflow:visible; /* 避免超出部分显示 */
+}
+
+.PLANET img.background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片充满容器并保持比例 */
+    display: block;
+}
+
+
+/* 主容器樣式 */
+.ABOUT {
+    position: relative; /* 讓子元素相對於父容器定位 */
+    width: 100vw; /* 容器寬度占滿螢幕 */
+    height: auto; /* 容器高度占滿螢幕 */
+    overflow: hidden; /* 避免超出內容顯示 */
+    display: flex; /* 使用 Flexbox */
+    flex-direction: column; /* 讓內容垂直排列 */
+    align-items: center; /* 水平置中 */
+    background-color: #000000; /* 黑色背景作為備選 */
+}
+
+/* 背景圖片樣式 */
+.back{
+    margin-bottom: -100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片充满容器并保持比例 */
+  
+}
+.backg{
+    margin-bottom: -100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片充满容器并保持比例 */
+  
+}
+
+/* 圖片容器樣式 */
+.im {
+    display: flex; /* 水平排列子元素 */
+    justify-content: center; /* 子元素水平置中 */
+    gap: 20px; /* 子元素之間的間距 */
+    margin-top: -100px; /* 與其他內容的間距 */
+    margin-bottom: 200px;
+}
+
+/* 圖片樣式 */
+.im img {
+    width: 300px; /* 圖片寬度 */
+    height: auto; /* 等比例縮放 */
+
+    border-radius: 10px; /* 圓角效果，可根據需求調整 */
+    transition: transform 0.3s ease; /* 增加動畫效果（可選） */
+
+    
+}
+
+.im img:hover {
+    transform: scale(0.9); /* 滑鼠懸停放大效果（可選） */
+}
+
+.a1:hover{
+    content: url('../hh/a2.png');
+}
+.b1:hover{
+    content: url('../hh/b2.png');
+}
+
+.c1:hover{
+    content: url('../hh/c2.png');
+}
+
+.button {
+    position: absolute; /* 按钮定位在图片上 */
+    top: 55%; /* 调整按钮垂直位置 */
+    left: 15%; /* 水平居中 */
+    transform: translate(-50%, -50%);
+    z-index: 10; /* 确保按钮显示在图片上方 */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.button img {
+    width: auto ; /* 设置按钮图片大小 */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.button img:hover {
+    content: url('../hh/go2.png'); /* 當懸停時切換圖片 */
+    transform: scale(1.1); /* 放大效果 */
+    opacity: 0.8; /* 增加透明度 */
+}
+
+.button2 {
+    position: absolute; /* 按钮定位在图片上 */
+    top: 55%; /* 调整按钮垂直位置 */
+    left: 20%; /* 水平居中 */
+    transform: translate(-50%, -50%);
+    z-index: 10; /* 确保按钮显示在图片上方 */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.button2 img {
+    width: auto ; /* 设置按钮图片大小 */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.button2 img:hover {
+    content: url('../hh/go2.png'); /* 當懸停時切換圖片 */
+    transform: scale(1.1); /* 放大效果 */
+    opacity: 0.8; /* 增加透明度 */
+}
+
+.parallax{
+
+    pointer-events: none;
+    /* transform: translate(-50%,-50%); */
+    transition: 0.45s cubic-bezier(0.2,0.49,0.32,0.99);
+
+}
+.h21{
+    color: #fff;
+    margin: 20px;
+}
+ul.actions {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    cursor: default;
+    list-style: none;
+    margin-left: -1rem;
+    padding-left: 0;
+}
+.fields{
+    margin: 20px;
+
+
+
+}
+
+
+
+#messageContent{
+    position: absolute;
+    top: 40%;
+    left: 25%;
+
+
+}
+
+#messageDiv {
+    display: none;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    color: #ffffff;
+    z-index: 999;
+    text-align: center;
+    
+    
+}
+    ul.actions li {
+        padding: 0 0 0 1rem;
+        vertical-align: middle;
+    }
+
+    ul.actions.special {
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+        width: 100%;
+        margin-left: 0;
+    }
+
+        ul.actions.special li:first-child {
+            padding-left: 0;
+        }
+
+    ul.actions.stacked {
+        -moz-flex-direction: column;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+        ul.actions.stacked li {
+            padding: 1.3rem 0 0 0;
+        }
+
+            ul.actions.stacked li:first-child {
+                padding-top: 0;
+            }
+
+    ul.actions.fit {
+        width: calc(100% + 1rem);
+    }
+
+        ul.actions.fit li {
+            -moz-flex-grow: 1;
+            -webkit-flex-grow: 1;
+            -ms-flex-grow: 1;
+            flex-grow: 1;
+            -moz-flex-shrink: 1;
+            -webkit-flex-shrink: 1;
+            -ms-flex-shrink: 1;
+            flex-shrink: 1;
+            width: 100%;
+        }
+
+            ul.actions.fit li > * {
+                width: 100%;
+            }
+
+        ul.actions.fit.stacked {
+            width: 100%;
+        }
+
+    @media screen and (max-width: 480px) {
+
+        ul.actions:not(.fixed) {
+            -moz-flex-direction: column;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            margin-left: 0;
+            width: 100% !important;
+        }
+
+            ul.actions:not(.fixed) li {
+                -moz-flex-grow: 1;
+                -webkit-flex-grow: 1;
+                -ms-flex-grow: 1;
+                flex-grow: 1;
+                -moz-flex-shrink: 1;
+                -webkit-flex-shrink: 1;
+                -ms-flex-shrink: 1;
+                flex-shrink: 1;
+                padding: 1rem 0 0 0;
+                text-align: center;
+                width: 100%;
+            }
+
+                ul.actions:not(.fixed) li > * {
+                    width: 100%;
+                }
+
+                ul.actions:not(.fixed) li:first-child {
+                    padding-top: 0;
+                }
+
+                ul.actions:not(.fixed) li input[type="submit"],
+                ul.actions:not(.fixed) li input[type="reset"],
+                ul.actions:not(.fixed) li input[type="button"],
+                ul.actions:not(.fixed) li button,
+                ul.actions:not(.fixed) li .button {
+                    width: 100%;
+                }
+
+                    ul.actions:not(.fixed) li input[type="submit"].icon:before,
+                    ul.actions:not(.fixed) li input[type="reset"].icon:before,
+                    ul.actions:not(.fixed) li input[type="button"].icon:before,
+                    ul.actions:not(.fixed) li button.icon:before,
+                    ul.actions:not(.fixed) li .button.icon:before {
+                        margin-left: -0.5em;
+                    }
+
+    }
+
+.close-btn2 {
+    color: #000000;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+.close-btn {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+    
+}
+
+    .icon:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        text-transform: none !important;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 400;
+    }
+
+    .icon > .label {
+        display: none;
+    }
+
+    .icon:before {
+        line-height: inherit;
+    }
+
+    .icon.solid:before {
+        font-weight: 900;
+    }
+
+    .icon.brands:before {
+        font-family: 'Font Awesome 5 Brands';
+    }
+
+    label {
+		color: #ffffff;
+		display: block;
+		font-size: 0.8rem;
+		font-weight: 300;
+		letter-spacing: 0.2rem;
+		line-height: 1.5;
+		margin: 0 0 1rem 0;
+		text-transform: uppercase;
+    }
+
+
+
+.dowm{
+    position: absolute;
+    top: 100%;
+    left: 100%;
+
+
+
+
+}

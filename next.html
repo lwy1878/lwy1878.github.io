@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <title>HK</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/11.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="href/GALAXYLAB.png" alt="" class="logo" />
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li>
+            <a href="#ABOUT">ABOUT</a>
+          </li>
+          <li><a href="#DISCOVER">DISCOVER</a></li>
+          <li><a href="#LANGUAGE">LANGUAGE</a></li>
+          <li><a href="#PLANET">PLANET</a></li>
+          <il
+            ><a href="#">
+              <img src="href\_圖層_1.png" /> </a
+          ></il>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="video-section">
+        <div class="video-slider" id="video-slider">
+          <div class="video-container">
+            <video src="video.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="video-container">
+            <video src="video2.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="video-container">
+            <video src="video3.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="video-container">
+            <video src="video4.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="video-container">
+            <video src="video5.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="video-container">
+            <video src="video6.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="video-container">
+            <video src="video7.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <button id="prev">&#9664;</button>
+          <button id="next">&#9654;</button>
+        </div>
+        <div class="controls">
+          <button class="active" data-index="0"></button>
+          <button data-index="1"></button>
+          <button data-index="2"></button>
+          <button data-index="3"></button>
+          <button data-index="4"></button>
+          <button data-index="5"></button>
+          <button data-index="6"></button>
+        </div>
+      </div>
+    </main>
+    <script>
+      const videoSlider = document.getElementById("video-slider");
+      const controlButtons = document.querySelectorAll(".controls button");
+      const prevButton = document.getElementById("prev");
+      const nextButton = document.getElementById("next");
+      const videos = document.querySelectorAll(".video-container video");
+      let currentIndex = 0;
+      const totalVideos = videos.length;
+
+      function updateSlider(index) {
+        currentIndex = (index + totalVideos) % totalVideos;
+        videoSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update active button
+        controlButtons.forEach((btn, i) => {
+          btn.classList.toggle("active", i === currentIndex);
+        });
+
+        // Play the current video, pause others
+        videos.forEach((video, i) => {
+          if (i === currentIndex) {
+            video.play();
+          } else {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      }
+      // Button Events
+      prevButton.addEventListener("click", () => {
+        updateSlider(currentIndex - 1);
+      });
+
+      nextButton.addEventListener("click", () => {
+        updateSlider(currentIndex + 1);
+      });
+
+      controlButtons.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          updateSlider(index);
+        });
+      });
+
+      // Initialize the slider
+      updateSlider(0);
+    </script>
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/aa.js"></script>
+  </body>
+</html>
